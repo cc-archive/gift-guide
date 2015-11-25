@@ -1,0 +1,42 @@
+{% cycle 'add row' : '<div class="row">', nil %}
+
+    <div class="col-md-6">
+      <div class="panel panel-success">
+
+
+  
+<div class="panel-body">
+
+<a href="{{ gift.url }}"><img src="{{ gift.image}}" align="right" class="thumbnail" style="max-height: 110px; margin-left: 1em; width: auto !important;" /></a>
+
+  
+<p><span style="font-weight: bold">{{ gift.title }}</span>{% if gift.author %} by {{ gift.author }}{% endif %}</p>
+
+<p><small>{{ gift.description | strip_html | truncatewords:25}}</small></p>
+
+
+</div>
+<div class="panel-footer" style="background: transparent !important">
+
+      <p><a href="{{ gift.url}}" class="pull-right btn-lg btn-success"><i class="glyphicon glyphicon-shopping-cart
+"></i>&nbsp;Buy it</a></p>
+
+
+  <ul class="list-inline list-unstyled">
+    {% if gift.license %}<li><img src="https://licensebuttons.net/i/cc-gift-guide/{{gift.license}}.png" alt="This work released under the {{ gift.license }} license" /></li>{% endif %}
+    <li><a href="https://twitter.com/share?url={{gift.url|url_encode}}&text={{gift.title}} in @creativecommons new Open Store&via=creativecommons"><img src="/img/glyphicons/social-32-twitter.png" alt="Share on Twitter" /></a></li>
+      <li><a href="https://facebook.com/sharer/sharer.php?u={{gift.url|url_encode}}"><img src="/img/glyphicons/social-31-facebook.png" alt="Share on Facebook" /></a></li>
+  </ul>
+
+
+
+
+</div>
+
+
+      </div>
+      </div>
+
+{% cycle 'end row' : nil, '</div>' %}
+
+

@@ -1,0 +1,51 @@
+---
+layout: default
+permalink: /discover/gift-guide/
+---
+<div class="container">
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="container">
+	<img src="/img/alwaysopen.png" style="height: 120px; position: relative; top: -20px;" class="pull-right" />
+        <h2>Welcome to The Open Store</h2>
+
+	
+        <p>Things that are open, that are about being open, or that enable open activities.</p>
+
+	<ul class="list-unstyled list-inline">
+	  <li><a href="#books">Shop books</a></li>
+	  <li><a href="#music">Shop music</a></li>
+	  <li><a href="#movies">Shop movies</a></li>
+	</ul>
+	  
+      </div>
+
+
+
+    <h3 id="books">Books</h3>
+
+{% for gift in site.data.books %}
+    {% include gg.html param="gift" variable-param=gift %}
+{% endfor %}
+
+<div class="clearfix"></div>
+    
+    <h3 id="music">Music</h3>
+
+{% for gift in site.data.music %}
+    {% include gg.html param="gift" variable-param=gift %}
+{% endfor %}
+
+<div class="clearfix"></div>
+    
+    <h3 id="movies">Movies</h3>
+
+{% for gift in site.data.films %}
+    {% include gg.html param="gift" variable-param=gift %}
+{% endfor %}
+
+
+
+</div>
+
+<div class="clearfix"></div>
